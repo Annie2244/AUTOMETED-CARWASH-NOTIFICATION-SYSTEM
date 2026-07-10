@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Service | Carwash</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body class="dashboard-page customer-dashboard sketch-app">
+  <div class="grid-container">
+    <header class="header">
+      <button type="button" class="menu-icon" aria-label="Open navigation menu" aria-expanded="false">
+        <span class="material-icons-outlined">menu</span>
+      </button>
+      <div class="header-left"><h2>Carwash Customer</h2></div>
+      <div class="header-right">
+        <span class="material-icons-outlined">notifications</span>
+        <span class="material-icons-outlined">account_circle</span>
+      </div>
+    </header>
+
+    <aside id="sidebar" class="sidebar" aria-label="Customer navigation">
+      <div class="sidebar-title">
+        <div class="sidebar-brand"><span class="material-icons-outlined">local_car_wash</span> Carwash</div>
+        <button type="button" class="close-sidebar" aria-label="Close navigation menu">
+          <span class="material-icons-outlined">close</span>
+        </button>
+      </div>
+      <ul class="sidebar-list">
+        <li class="sidebar-list-item"><a class="active" href="#booking"><span class="material-icons-outlined">calendar_month</span> Book a service</a></li>
+        <li class="sidebar-list-item"><a href="#appointments"><span class="material-icons-outlined">event_note</span> My bookings</a></li>
+        <li class="sidebar-list-item"><a href="#payments"><span class="material-icons-outlined">payments</span> Payments</a></li>
+        <li class="sidebar-list-item"><a href="#support"><span class="material-icons-outlined">support_agent</span> Contact us</a></li>
+        <li class="sidebar-list-item sidebar-logout"><a href="index.html" data-action="logout"><span class="material-icons-outlined">logout</span> Logout</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-container">
+      <div class="main-title">
+        <p class="eyebrow">Quick and easy</p>
+        <h2>Book Your Carwash Service</h2>
+      </div>
+
+      <form class="booking-form" id="booking">
+        <section class="panel">
+          <div class="panel-heading">
+            <h3>Booking Service Options</h3>
+            <span class="material-icons-outlined">event_available</span>
+          </div>
+          <div class="form-grid">
+            <label>
+              Choose a service
+              <select name="service" required>
+                <option value="Home cleaning|500">Home cleaning — KSh 500</option>
+                <option value="Car wash|400">Car wash — KSh 400</option>
+                <option value="Electrical service|800">Electrical service — KSh 800</option>
+                <option value="Painting|1000">Painting — KSh 1,000</option>
+              </select>
+            </label>
+            <label>
+              Select date
+              <input type="date" name="date" required>
+            </label>
+            <label>
+              Select time
+              <select name="time" required>
+                <option>9:00 AM</option>
+                <option>10:30 AM</option>
+                <option>12:00 PM</option>
+                <option>2:00 PM</option>
+              </select>
+            </label>
+          </div>
+          <button class="secondary-action" type="button" id="availability-button">Check availability</button>
+          <p class="availability-message" aria-live="polite"></p>
+        </section>
+
+        <section class="panel">
+          <div class="panel-heading">
+            <h3>Choose a Payment Option</h3>
+            <span class="muted">Secure checkout</span>
+          </div>
+          <div class="payment-options">
+            <label class="payment-option active">
+              <input type="radio" name="payment" value="M-Pesa" checked>
+              <span class="material-icons-outlined">phone_android</span>
+              <b>M-Pesa</b><small>Pay using M-Pesa</small>
+            </label>
+            <label class="payment-option">
+              <input type="radio" name="payment" value="Credit / debit card">
+              <span class="material-icons-outlined">credit_card</span>
+              <b>Credit / Debit Card</b><small>Pay using card</small>
+            </label>
+            <label class="payment-option">
+              <input type="radio" name="payment" value="Bank transfer">
+              <span class="material-icons-outlined">account_balance</span>
+              <b>Bank Transfer</b><small>Pay using bank</small>
+            </label>
+            <label class="payment-option">
+              <input type="radio" name="payment" value="Cash">
+              <span class="material-icons-outlined">payments</span>
+              <b>Cash</b><small>Pay when service is done</small>
+            </label>
+          </div>
+        </section>
+
+        <section class="panel booking-summary" id="payments">
+          <div>
+            <p class="eyebrow">Booking summary</p>
+            <h3>Your selected service</h3>
+            <p id="booking-summary">Car wash · KSh 400</p>
+          </div>
+          <button type="submit" class="primary-action">Pay now</button>
+        </section>
+      </form>
+    </main>
+  </div>
+  <script src="../js/script.js"></script>
+</body>
+</html>

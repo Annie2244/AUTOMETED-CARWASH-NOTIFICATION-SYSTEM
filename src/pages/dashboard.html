@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carwash Notification Dashboard</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body class="dashboard-page main-dashboard">
+  <div class="grid-container">
+
+    <!-- Header -->
+    <header class="header">
+      <button type="button" class="menu-icon" aria-label="Open navigation menu" aria-expanded="false">
+        <span class="material-icons-outlined">menu</span>
+      </button>
+      <div class="header-left">
+        <span class="material-icons-outlined">search</span>
+      </div>
+      <div class="header-right">
+        <span class="material-icons-outlined">notifications</span>
+        <span class="material-icons-outlined">email</span>
+        <span class="material-icons-outlined">account_circle</span>
+      </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar" aria-label="Main navigation">
+      <div class="sidebar-title">
+        <div class="sidebar-brand">
+          <span class="material-icons-outlined">local_car_wash</span> Carwash
+        </div>
+        <button type="button" class="close-sidebar" aria-label="Close navigation menu">
+          <span class="material-icons-outlined">close</span>
+        </button>
+      </div>
+
+      <ul class="sidebar-list">
+        <li class="sidebar-list-item"><a href="#"><span class="material-icons-outlined">dashboard</span> Dashboard</a></li>
+        <li class="sidebar-list-item"><a href="#"><span class="material-icons-outlined">event</span> Appointments</a></li>
+        <li class="sidebar-list-item"><a href="#"><span class="material-icons-outlined">people</span> Customers</a></li>
+        <li class="sidebar-list-item"><a href="#"><span class="material-icons-outlined">attach_money</span> Revenue</a></li>
+        <li class="sidebar-list-item"><a href="#"><span class="material-icons-outlined">support_agent</span> Support</a></li>
+        <li class="sidebar-list-item"><a href="#"><span class="material-icons-outlined">settings</span> Settings</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main -->
+    <main class="main-container">
+      <div class="main-title">
+        <h2>CARWASH DASHBOARD</h2>
+      </div>
+
+      <!-- Cards -->
+      <div class="main-cards">
+        <div class="card">
+          <div class="card-inner">
+            <h2>TODAY'S BOOKINGS</h2>
+            <span class="material-icons-outlined">available_space</span>
+          </div>
+          <h1>15</h1>
+        </div>
+
+        <div class="card">
+          <div class="card-inner">
+            <h2>CUSTOMERS</h2>
+            <span class="material-icons-outlined">people</span>
+          </div>
+          <h1>120</h1>
+        </div>
+
+        <div class="card">
+          <div class="card-inner">
+            <h2>REVENUE</h2>
+            <span class="material-icons-outlined">attach_money</span>
+          </div>
+          <h1>1,300</h1>
+        </div>
+
+        <div class="card">
+          <div class="card-inner">
+            <h2>NOTIFICATIONS</h2>
+            <span class="material-icons-outlined">notifications</span>
+          </div>
+          <h1>8</h1>
+        </div>
+      </div>
+
+      <!-- Updates -->
+      <div class="products">
+        <div class="product-card">
+          <h2 class="product-description">Latest Updates</h2>
+          <p class="text-secondary">
+            New loyalty program launched. Customers earn points for every wash.
+          </p>
+          <button type="button" class="product-button" aria-label="View latest updates">
+            <span class="material-icons-outlined">add</span>
+          </button>
+        </div>
+
+        <div class="social-media">
+          <div class="product">
+            <div>
+              <div class="product-icon background-blue">
+                <i class="bi bi-car-front"></i>
+              </div>
+              <h1 class="text-blue">+5</h1>
+              <p class="text-secondary">New premium wash bookings today.</p>
+            </div>
+
+            <div>
+              <div class="product-icon background-green">
+                <i class="bi bi-credit-card"></i>
+              </div>
+              <h1 class="text-green">450</h1>
+              <p class="text-secondary">Revenue from express washes.</p>
+            </div>
+
+            <div>
+              <div class="product-icon background-orange">
+                <i class="bi bi-chat-dots"></i>
+              </div>
+              <h1 class="text-orange">12</h1>
+              <p class="text-secondary">Customer inquiries pending response.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Custom JS -->
+  <script src="../js/script.js"></script>
+</body>
+</html>
