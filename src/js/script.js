@@ -19,6 +19,35 @@ function showToast(message, type = 'success') {
   showToast.timeoutId = window.setTimeout(() => toast.classList.remove('toast-visible'), 3200);
 }
 
+function getLinkLabel(link) {
+  const textNode = Array.from(link.childNodes).find(
+    (node) => node.nodeType === Node.TEXT_NODE && node.textContent.trim()
+  );
+  return textNode ? textNode.textContent.trim() : link.textContent.trim();
+}
+
+function setActiveLink(clickedLink, updateTitle = false) {
+  const links = Array.from(document.querySelectorAll('.sidebar-list-item a')).filter(
+    (link) => link.dataset.action !== 'logout'
+  );
+  if (!links.length) return;
+
+  let activeLink = clickedLink;
+  if (!activeLink) {
+    const hash = window.location.hash;
+    activeLink = hash ? links.find((link) => link.hash === hash) : null;
+  }
+  if (!activeLink) activeLink = links[0];
+
+  links.forEach((link) => link.classList.remove('active'));
+  activeLink.classList.add('active');
+
+  if (updateTitle) {
+    const mainTitle = document.querySelector('.main-title h2');
+    if (mainTitle) mainTitle.textContent = getLinkLabel(activeLink).toUpperCase();
+  }
+}
+
 function openSidebar() {
   const sidebar = document.getElementById('sidebar');
   if (!sidebar) return;
@@ -69,7 +98,6 @@ function initialiseDashboard() {
   sidebarBackdrop.setAttribute('aria-label', 'Close navigation menu');
   sidebarBackdrop.addEventListener('click', () => {
     closeSidebar();
-    document.querySelectorAll('.sidebar-list-item a').forEach((a) => a.classList.remove('active'));
   });
   document.body.append(sidebarBackdrop);
   const sidebarList = document.querySelector('.sidebar-list');
@@ -93,11 +121,10 @@ function initialiseDashboard() {
         return;
       }
       event.preventDefault();
-      document.querySelectorAll('.sidebar-list-item a').forEach((item) => item.classList.remove('active'));
-      link.classList.add('active');
-      document.querySelector('.main-title h2').textContent = link.textContent.trim().toUpperCase();
+      window.location.hash = link.hash;
+      setActiveLink(link, true);
       closeSidebar();
-      showToast(`${link.textContent.trim()} selected.`);
+      showToast(`${getLinkLabel(link)} selected.`);
     });
   });
   document.querySelectorAll('.product-button').forEach((button) => {
@@ -142,6 +169,9 @@ function initialiseDashboard() {
     updateBookingSummary();
     showToast('Booking created successfully. Payment is recorded for this demo.');
   });
+  updateBookingSummary();
+  setActiveLink();
+  window.addEventListener('hashchange', () => setActiveLink());
   // Remove potential UI-locking by ensuring sidebar-backdrop never blocks clicks permanently
   // (Intentionally no global click handlers here; sidebar handled only by menu button + backdrop.)
 
@@ -192,7 +222,7 @@ function initialiseLogin() {
       showToast('Incorrect email or password. Register an account first.', 'error');
       return;
     }
-    localStorage.setItem('carwash-current-user', JSON.stringify(user));
+    localStorage.setItem('carwash-current-user', JSON.stringify({ name: user.name, email: user.email, role: user.role }));
     window.location.href = pagesByRole[user.role];
   });
 }
