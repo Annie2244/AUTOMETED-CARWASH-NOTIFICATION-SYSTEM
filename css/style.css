@@ -141,6 +141,12 @@ header {
   background: rgba(255, 255, 255, 0.15) !important;
 }
 
+.menu-icon:active,
+.close-sidebar:active {
+  background: rgba(255, 255, 255, 0.15) !important;
+  transform: none !important;
+}
+
 /* Sidebar */
 .sidebar {
   grid-area: sidebar;
@@ -447,6 +453,8 @@ body.attendant-dashboard .card h1 { color: #ff9800; }
 .sketch-app .sidebar-logout { margin-top: auto; padding-top: 16px; border-top: 1px solid rgba(255,255,255,.18); }
 .sidebar-backdrop { position: fixed; inset: 0; z-index: 25; border: 0; margin: 0; padding: 0; background: rgba(15,23,42,.46); opacity: 0; pointer-events: none; transition: opacity .25s ease; }
 .sidebar-backdrop.sidebar-backdrop-visible { opacity: 1; pointer-events: auto; }
+.sidebar-backdrop:hover,
+.sidebar-backdrop:active { background: rgba(15,23,42,.46) !important; transform: none !important; }
 .sketch-app .header h2 { margin: 0; font-size: 20px; }
 .sketch-app .header-left { display: flex; align-items: center; }
 .eyebrow { color: #64748b; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-align: left; text-transform: uppercase; }
