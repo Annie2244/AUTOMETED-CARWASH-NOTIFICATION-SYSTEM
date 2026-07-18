@@ -32,38 +32,20 @@ function setActiveLink(clickedLink, updateTitle = false) {
   );
   if (!links.length) return;
 
+  const currentFile = window.location.pathname.split('/').pop();
   let activeLink = clickedLink;
   if (!activeLink) {
-    const hash = window.location.hash;
-    activeLink = hash ? links.find((link) => link.hash === hash) : null;
+    activeLink = links.find((link) => link.getAttribute('href') === currentFile);
   }
   if (!activeLink) activeLink = links[0];
 
   links.forEach((link) => link.classList.remove('active'));
   activeLink.classList.add('active');
 
-  if (updateTitle || window.location.hash) {
+  if (updateTitle) {
     const mainTitle = document.querySelector('.main-title h2');
     if (mainTitle) mainTitle.textContent = getLinkLabel(activeLink).toUpperCase();
   }
-}
-
-function ensureSidebarSections() {
-  const main = document.querySelector('.main-container');
-  if (!main) return;
-  document.querySelectorAll('.sidebar-list-item a').forEach((link) => {
-    if (link.dataset.action === 'logout') return;
-    const hash = link.hash;
-    if (!hash || hash === '#') return;
-    const id = hash.slice(1);
-    if (document.getElementById(id)) return;
-    const section = document.createElement('section');
-    section.id = id;
-    section.className = 'panel';
-    const label = getLinkLabel(link);
-    section.innerHTML = `<div class="panel-heading"><h3>${label}</h3></div><p>Content for ${label} will be added here.</p>`;
-    main.appendChild(section);
-  });
 }
 
 function openSidebar() {
@@ -125,7 +107,6 @@ function initialiseDashboard() {
     logoutItem.innerHTML = '<a href="index.html" data-action="logout"><span class="material-icons-outlined">logout</span> Logout</a>';
     sidebarList.append(logoutItem);
   }
-  ensureSidebarSections();
   document.querySelector('.menu-icon')?.addEventListener('click', (e) => {
     e.preventDefault();
     toggleSidebar();
@@ -139,10 +120,16 @@ function initialiseDashboard() {
         window.location.href = 'index.html';
         return;
       }
+      // Page links (e.g. customer-bookings.html) navigate normally; hash links scroll on the same page
+      const href = link.getAttribute('href') || '';
+      if (!href.startsWith('#')) {
+        closeSidebar();
+        return;
+      }
       event.preventDefault();
-      const target = document.getElementById(link.hash.slice(1));
+      const target = document.getElementById(href.slice(1));
       if (target) target.scrollIntoView({ behavior: 'smooth' });
-      window.location.hash = link.hash;
+      window.location.hash = href;
       setActiveLink(link, true);
       closeSidebar();
       showToast(`${getLinkLabel(link)} selected.`);
@@ -192,8 +179,8 @@ function initialiseDashboard() {
   });
   updateBookingSummary();
   setActiveLink();
-  const initialTarget = document.getElementById(window.location.hash.slice(1));
-  if (initialTarget) initialTarget.scrollIntoView({ behavior: 'smooth' });
+  const hashTarget = document.getElementById(window.location.hash.slice(1));
+  if (hashTarget) hashTarget.scrollIntoView({ behavior: 'smooth' });
   window.addEventListener('hashchange', () => {
     setActiveLink();
     const target = document.getElementById(window.location.hash.slice(1));
