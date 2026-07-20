@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Customers | Carwash</title>
+  <title>Profile | Carwash</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
   <link rel="stylesheet" href="../../css/style.css">
 </head>
@@ -14,28 +14,40 @@
 <li class="sidebar-list-item"><a href="admin.html"><span class="material-icons-outlined">dashboard</span> Dashboard</a></li>
 <li class="sidebar-list-item"><a href="admin-bookings.html"><span class="material-icons-outlined">event</span> Bookings</a></li>
 <li class="sidebar-list-item"><a href="admin-services.html"><span class="material-icons-outlined">wash</span> Services</a></li>
-<li class="sidebar-list-item"><a href="admin-customers.html" class="active"><span class="material-icons-outlined">people</span> Customers</a></li>
+<li class="sidebar-list-item"><a href="admin-customers.html"><span class="material-icons-outlined">people</span> Customers</a></li>
 <li class="sidebar-list-item"><a href="admin-payments.html"><span class="material-icons-outlined">payments</span> Payments</a></li>
 <li class="sidebar-list-item"><a href="admin-reports.html"><span class="material-icons-outlined">assessment</span> Reports</a></li>
 <li class="sidebar-list-item"><a href="admin-settings.html"><span class="material-icons-outlined">settings</span> Settings</a></li>
-<li class="sidebar-list-item"><a href="admin-profile.html"><span class="material-icons-outlined">account_circle</span> Profile</a></li>
+<li class="sidebar-list-item"><a href="admin-profile.html" class="active"><span class="material-icons-outlined">account_circle</span> Profile</a></li>
 <li class="sidebar-list-item sidebar-logout"><a href="index.html" data-action="logout"><span class="material-icons-outlined">logout</span> Logout</a></li>
 </ul></aside>
     <main class="main-container">
 
-  <div class="main-title"><p class="eyebrow">Section</p><h2>CUSTOMERS</h2></div>
+  <div class="main-title"><p class="eyebrow">Section</p><h2>PROFILE</h2></div>
+  
   <section class="panel">
-    <div class="panel-heading"><h3>Registered customers</h3><button type="button" class="text-button demo-button">Add customer</button></div>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Bookings</th><th>Action</th></tr></thead>
-        <tbody>
-          <tr><td>John Mwangi</td><td>john@example.com</td><td>customer</td><td>5</td><td><button type="button" class="demo-button text-button">View</button></td></tr>
-          <tr><td>Jane Wanjiku</td><td>jane@example.com</td><td>customer</td><td>3</td><td><button type="button" class="demo-button text-button">View</button></td></tr>
-          <tr><td>Peter Ochieng</td><td>peter@example.com</td><td>attendant</td><td>0</td><td><button type="button" class="demo-button text-button">View</button></td></tr>
-        </tbody>
-      </table>
-    </div>
+    <div class="panel-heading"><h3>My Profile</h3></div>
+    <form class="profile-form demo-form">
+      <div class="form-grid">
+        <label>
+          Full name
+          <input type="text" name="name" placeholder="Your name" required>
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" placeholder="you@example.com" required>
+        </label>
+        <label>
+          Role
+          <input type="text" name="role" value="admin" disabled>
+        </label>
+      </div>
+      <button type="submit" class="primary-action">Update profile</button>
+    </form>
+  </section>
+  <section class="panel">
+    <div class="panel-heading"><h3>Admin permissions</h3></div>
+    <p>As an admin you can manage bookings, services, customers, payments and system settings.</p>
     <a href="admin.html" class="landing-action">Back to dashboard</a>
   </section>
 </main>

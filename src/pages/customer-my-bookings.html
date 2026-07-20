@@ -32,18 +32,26 @@
 <li class="sidebar-list-item"><a href="customer-my-bookings.html" class="active"><span class="material-icons-outlined">event_note</span> My bookings</a></li>
 <li class="sidebar-list-item"><a href="customer-payments.html"><span class="material-icons-outlined">payments</span> Payments</a></li>
 <li class="sidebar-list-item"><a href="customer-contact-us.html"><span class="material-icons-outlined">support_agent</span> Contact us</a></li>
+<li class="sidebar-list-item"><a href="customer-profile.html"><span class="material-icons-outlined">account_circle</span> Profile</a></li>
 <li class="sidebar-list-item sidebar-logout"><a href="index.html" data-action="logout"><span class="material-icons-outlined">logout</span> Logout</a></li>
 </ul>
     </aside>
 
     <main class="main-container">
-  <div class="main-title">
-    <p class="eyebrow">Section</p>
-    <h2>MY BOOKINGS</h2>
-  </div>
+
+  <div class="main-title"><p class="eyebrow">Section</p><h2>MY BOOKINGS</h2></div>
   <section class="panel">
-    <div class="panel-heading"><h3>My bookings</h3></div>
-    <p>Content for My bookings will be added here.</p>
+    <div class="panel-heading"><h3>Upcoming &amp; past bookings</h3><button type="button" class="text-button demo-button">Refresh</button></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Service</th><th>Date</th><th>Time</th><th>Status</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td>Car wash</td><td>12 Jul 2026</td><td>9:00 AM</td><td><span class="badge confirmed">Confirmed</span></td><td><button type="button" class="demo-button secondary-action">Cancel</button></td></tr>
+          <tr><td>Interior cleaning</td><td>14 Jul 2026</td><td>2:00 PM</td><td><span class="badge pending">Pending</span></td><td><button type="button" class="demo-button secondary-action">Cancel</button></td></tr>
+          <tr><td>Painting</td><td>02 Jul 2026</td><td>10:30 AM</td><td><span class="badge progress">Completed</span></td><td><button type="button" class="demo-button text-button">Receipt</button></td></tr>
+        </tbody>
+      </table>
+    </div>
     <a href="customer.html" class="landing-action">Back to dashboard</a>
   </section>
 </main>

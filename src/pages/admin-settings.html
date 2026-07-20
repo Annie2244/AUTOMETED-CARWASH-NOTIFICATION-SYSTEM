@@ -18,16 +18,23 @@
 <li class="sidebar-list-item"><a href="admin-payments.html"><span class="material-icons-outlined">payments</span> Payments</a></li>
 <li class="sidebar-list-item"><a href="admin-reports.html"><span class="material-icons-outlined">assessment</span> Reports</a></li>
 <li class="sidebar-list-item"><a href="admin-settings.html" class="active"><span class="material-icons-outlined">settings</span> Settings</a></li>
+<li class="sidebar-list-item"><a href="admin-profile.html"><span class="material-icons-outlined">account_circle</span> Profile</a></li>
 <li class="sidebar-list-item sidebar-logout"><a href="index.html" data-action="logout"><span class="material-icons-outlined">logout</span> Logout</a></li>
 </ul></aside>
     <main class="main-container">
-  <div class="main-title">
-    <p class="eyebrow">Section</p>
-    <h2>SETTINGS</h2>
-  </div>
+
+  <div class="main-title"><p class="eyebrow">Section</p><h2>SETTINGS</h2></div>
   <section class="panel">
-    <div class="panel-heading"><h3>Settings</h3></div>
-    <p>Content for Settings will be added here.</p>
+    <div class="panel-heading"><h3>Business settings</h3></div>
+    <form class="demo-form">
+      <div class="form-grid">
+        <label>Business name<input type="text" name="business" value="Carwash Pro" required></label>
+        <label>Contact email<input type="email" name="email" value="info@carwash.com" required></label>
+        <label>Phone<input type="tel" name="phone" value="+254 712 345 678" required></label>
+      </div>
+      <label><input type="checkbox" name="notifications" checked> Send email notifications</label>
+      <button type="submit" class="primary-action">Save settings</button>
+    </form>
     <a href="admin.html" class="landing-action">Back to dashboard</a>
   </section>
 </main>

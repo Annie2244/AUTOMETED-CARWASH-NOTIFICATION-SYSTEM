@@ -31,17 +31,26 @@
 <li class="sidebar-list-item"><a href="attendant.html"><span class="material-icons-outlined">event</span> Bookings</a></li>
 <li class="sidebar-list-item"><a href="attendant-notifications.html" class="active"><span class="material-icons-outlined">send</span> Notifications</a></li>
 <li class="sidebar-list-item"><a href="attendant-payments.html"><span class="material-icons-outlined">payments</span> Payments</a></li>
+<li class="sidebar-list-item"><a href="attendant-profile.html"><span class="material-icons-outlined">account_circle</span> Profile</a></li>
 </ul>
     </aside>
 
     <main class="main-container">
-  <div class="main-title">
-    <p class="eyebrow">Section</p>
-    <h2>NOTIFICATIONS</h2>
-  </div>
+
+  <div class="main-title"><p class="eyebrow">Section</p><h2>NOTIFICATIONS</h2></div>
   <section class="panel">
-    <div class="panel-heading"><h3>Notifications</h3></div>
-    <p>Content for Notifications will be added here.</p>
+    <div class="panel-heading"><h3>Send a notification</h3></div>
+    <form class="notification-form demo-form">
+      <label>Customer<select name="customer" required><option value="">Select customer</option><option value="john">John Mwangi</option><option value="jane">Jane Wanjiku</option><option value="mike">Mike Johnson</option></select></label>
+      <label>Subject<input type="text" name="subject" required></label>
+      <label>Message<textarea name="message" rows="4" required></textarea></label>
+      <button type="submit" class="primary-action">Send notification</button>
+    </form>
+  </section>
+  <section class="panel">
+    <div class="panel-heading"><h3>Sent today</h3></div>
+    <div class="feedback"><b>John Mwangi</b><p>“Your car wash is ready for pickup.”</p></div>
+    <div class="feedback"><b>Jane Wanjiku</b><p>“We have a slot at 2:00 PM today.”</p></div>
     <a href="attendant.html" class="landing-action">Back to dashboard</a>
   </section>
 </main>

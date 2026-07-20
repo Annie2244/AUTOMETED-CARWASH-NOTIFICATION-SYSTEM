@@ -192,13 +192,35 @@ function initialiseDashboard() {
   document.querySelectorAll('.header-right .material-icons-outlined').forEach((icon) => {
     icon.setAttribute('tabindex', '0');
     icon.setAttribute('role', 'button');
-    icon.setAttribute('aria-label', `${icon.textContent.trim()} panel`);
-    const action = () => showToast(`${icon.textContent.trim()} panel opened.`);
+    const iconName = icon.textContent.trim();
+    icon.setAttribute('aria-label', `${iconName} panel`);
+    let action;
+    if (iconName === 'account_circle') {
+      action = () => {
+        const current = JSON.parse(localStorage.getItem('carwash-current-user') || '{}');
+        const profilePage = current.role ? `${current.role}-profile.html` : 'login.html';
+        window.location.href = profilePage;
+      };
+    } else {
+      action = () => showToast(`${iconName} panel opened.`);
+    }
     icon.addEventListener('click', action);
     icon.addEventListener('keydown', (event) => {
       if (event.key === 'Enter' || event.key === ' ') action();
     });
   });
+
+  document.querySelectorAll('.demo-form:not(.profile-form)').forEach((form) => {
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+      showToast('Saved successfully.');
+    });
+  });
+  document.querySelectorAll('.demo-button').forEach((button) => {
+    button.addEventListener('click', () => showToast('Action recorded.'));
+  });
+  initialiseProfile();
 }
 
 function initialiseRegistration() {
@@ -238,6 +260,30 @@ function initialiseLogin() {
     }
     localStorage.setItem('carwash-current-user', JSON.stringify({ name: user.name, email: user.email, role: user.role }));
     window.location.href = pagesByRole[user.role];
+  });
+}
+
+function initialiseProfile() {
+  const form = document.querySelector('.profile-form');
+  if (!form) return;
+  const current = JSON.parse(localStorage.getItem('carwash-current-user') || '{}');
+  if (current.name) form.querySelector('[name="name"]').value = current.name;
+  if (current.email) form.querySelector('[name="email"]').value = current.email;
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    const formData = new FormData(form);
+    const name = formData.get('name').trim();
+    const email = formData.get('email').trim().toLowerCase();
+    const users = getUsers();
+    const existing = users.find((user) => user.email === current.email);
+    if (existing) {
+      existing.name = name;
+      existing.email = email;
+    }
+    localStorage.setItem(userStorageKey, JSON.stringify(users));
+    localStorage.setItem('carwash-current-user', JSON.stringify({ ...current, name, email }));
+    showToast('Profile updated successfully.');
   });
 }
 

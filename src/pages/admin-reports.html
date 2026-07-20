@@ -18,16 +18,28 @@
 <li class="sidebar-list-item"><a href="admin-payments.html"><span class="material-icons-outlined">payments</span> Payments</a></li>
 <li class="sidebar-list-item"><a href="admin-reports.html" class="active"><span class="material-icons-outlined">assessment</span> Reports</a></li>
 <li class="sidebar-list-item"><a href="admin-settings.html"><span class="material-icons-outlined">settings</span> Settings</a></li>
+<li class="sidebar-list-item"><a href="admin-profile.html"><span class="material-icons-outlined">account_circle</span> Profile</a></li>
 <li class="sidebar-list-item sidebar-logout"><a href="index.html" data-action="logout"><span class="material-icons-outlined">logout</span> Logout</a></li>
 </ul></aside>
     <main class="main-container">
-  <div class="main-title">
-    <p class="eyebrow">Section</p>
-    <h2>REPORTS</h2>
-  </div>
+
+  <div class="main-title"><p class="eyebrow">Section</p><h2>REPORTS</h2></div>
+  <section class="stat-grid">
+    <article class="stat-card"><span class="material-icons-outlined">calendar_month</span><div><small>Total bookings</small><strong>128</strong></div></article>
+    <article class="stat-card"><span class="material-icons-outlined">task_alt</span><div><small>Completed</small><strong>96</strong></div></article>
+    <article class="stat-card"><span class="material-icons-outlined">payments</span><div><small>Revenue</small><strong>KSh 124,500</strong></div></article>
+    <article class="stat-card"><span class="material-icons-outlined">star</span><div><small>Avg rating</small><strong>4.6</strong></div></article>
+  </section>
   <section class="panel">
-    <div class="panel-heading"><h3>Reports</h3></div>
-    <p>Content for Reports will be added here.</p>
+    <div class="panel-heading"><h3>Weekly bookings</h3><span class="muted">Last 7 days</span></div>
+    <div class="chart"><svg viewBox="0 0 460 190" role="img" aria-label="Weekly booking chart"><path class="chart-grid" d="M15 25H445M15 70H445M15 115H445M15 160H445"/><polyline class="chart-line" points="20,150 85,110 150,70 215,115 280,92 345,45 430,28"/><polyline class="chart-line-secondary" points="20,130 85,140 150,108 215,135 280,100 345,125 430,80"/></svg><div class="chart-labels"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div></div>
+  </section>
+  <section class="panel">
+    <div class="panel-heading"><h3>Service performance</h3></div>
+    <div class="progress-row"><span>Car wash</span><b>45%</b><div><i class="progress-green" style="width:45%"></i></div></div>
+    <div class="progress-row"><span>Detailing</span><b>30%</b><div><i class="progress-orange" style="width:30%"></i></div></div>
+    <div class="progress-row"><span>Interior</span><b>15%</b><div><i class="progress-blue" style="width:15%"></i></div></div>
+    <div class="progress-row"><span>Painting</span><b>10%</b><div><i class="progress-red" style="width:10%"></i></div></div>
     <a href="admin.html" class="landing-action">Back to dashboard</a>
   </section>
 </main>

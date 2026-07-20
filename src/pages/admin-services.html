@@ -18,16 +18,35 @@
 <li class="sidebar-list-item"><a href="admin-payments.html"><span class="material-icons-outlined">payments</span> Payments</a></li>
 <li class="sidebar-list-item"><a href="admin-reports.html"><span class="material-icons-outlined">assessment</span> Reports</a></li>
 <li class="sidebar-list-item"><a href="admin-settings.html"><span class="material-icons-outlined">settings</span> Settings</a></li>
+<li class="sidebar-list-item"><a href="admin-profile.html"><span class="material-icons-outlined">account_circle</span> Profile</a></li>
 <li class="sidebar-list-item sidebar-logout"><a href="index.html" data-action="logout"><span class="material-icons-outlined">logout</span> Logout</a></li>
 </ul></aside>
     <main class="main-container">
-  <div class="main-title">
-    <p class="eyebrow">Section</p>
-    <h2>SERVICES</h2>
-  </div>
+
+  <div class="main-title"><p class="eyebrow">Section</p><h2>SERVICES</h2></div>
   <section class="panel">
-    <div class="panel-heading"><h3>Services</h3></div>
-    <p>Content for Services will be added here.</p>
+    <div class="panel-heading"><h3>Available services</h3></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Service</th><th>Price</th><th>Available</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td>Car wash</td><td>KSh 400</td><td><input type="checkbox" checked></td><td><button type="button" class="demo-button text-button">Edit</button></td></tr>
+          <tr><td>Home cleaning</td><td>KSh 500</td><td><input type="checkbox" checked></td><td><button type="button" class="demo-button text-button">Edit</button></td></tr>
+          <tr><td>Electrical service</td><td>KSh 800</td><td><input type="checkbox" checked></td><td><button type="button" class="demo-button text-button">Edit</button></td></tr>
+          <tr><td>Painting</td><td>KSh 1,000</td><td><input type="checkbox"></td><td><button type="button" class="demo-button text-button">Edit</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section class="panel">
+    <div class="panel-heading"><h3>Add new service</h3></div>
+    <form class="demo-form">
+      <div class="form-grid">
+        <label>Service name<input type="text" name="service" required></label>
+        <label>Price (KSh)<input type="number" name="price" required></label>
+      </div>
+      <button type="submit" class="primary-action">Add service</button>
+    </form>
     <a href="admin.html" class="landing-action">Back to dashboard</a>
   </section>
 </main>
