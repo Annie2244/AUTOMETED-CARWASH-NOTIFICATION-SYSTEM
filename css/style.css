@@ -114,7 +114,7 @@ body.dashboard-page {
   z-index: 2;
 }
 
-/* Header */
+/* ===== HEADER ===== */
 header {
   grid-area: header;
   color: #fff;
@@ -162,10 +162,10 @@ header {
   background: rgba(255, 255, 255, 0.15);
 }
 
-/* Sidebar */
+/* ===== SIDEBAR ===== */
 .sidebar {
   grid-area: sidebar;
-  background-color: transparent;
+  background-color: #2c3e50;
   color: #fff;
   padding: 20px;
 }
@@ -197,9 +197,9 @@ header {
   transform: translateX(5px);
 }
 
-/* ✅ FIXED ACTIVE STATE */
+/* ===== ACTIVE STATE ===== */
 .sidebar-list-item a.active {
-  background: transparent !important;  /* no blue */
+  background: transparent !important;
   color: #fff !important;
   font-weight: 600;
   text-decoration: underline;
@@ -207,19 +207,11 @@ header {
 }
 
 /* Role-specific active colors */
-.admin-dashboard .sidebar-list-item a.active {
-  background: #1e3a8a !important;
-}
+.admin-dashboard .sidebar-list-item a.active { background: #1e3a8a !important; }
+.customer-dashboard .sidebar-list-item a.active { background: #2e7d32 !important; }
+.attendant-dashboard .sidebar-list-item a.active { background: #ff9800 !important; }
 
-.customer-dashboard .sidebar-list-item a.active {
-  background: #2e7d32 !important;
-}
-
-.attendant-dashboard .sidebar-list-item a.active {
-  background: #ff9800 !important;
-}
-
-/* Main Content */
+/* ===== MAIN CONTENT ===== */
 .main-container {
   grid-area: main;
   padding: 20px;
@@ -231,7 +223,7 @@ header {
   margin-bottom: 20px;
 }
 
-/* Cards */
+/* ===== CARDS ===== */
 .main-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -261,7 +253,7 @@ header {
 .card h2 { font-size: 16px; margin-bottom: 10px; }
 .card h1 { font-size: 22px; }
 
-/* Products / Updates */
+/* ===== PRODUCTS / UPDATES ===== */
 .products {
   display: grid;
   grid-template-columns: 1fr;
@@ -311,7 +303,7 @@ header {
   transform: scale(0.95);
 }
 
-/* Quick Stats Icons */
+/* ===== QUICK STATS ICONS ===== */
 .product-icon {
   width: 50px; height: 50px;
   border-radius: 50%;
@@ -504,4 +496,3 @@ body.attendant-dashboard .card h1 { color: #ff9800; }
 .booking-form { display:grid; gap:20px; max-width:1000px; }.form-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }.booking-summary { display:flex; align-items:center; justify-content:space-between; gap:16px; }.booking-summary h3 { margin:4px 0; }.booking-summary p { margin:0; text-align:left; color:#64748b; }.payment-options { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }.payment-option { position:relative; min-height:130px; padding:18px; border:2px solid #e2e8f0; border-radius:10px; cursor:pointer; transition:.2s; }.payment-option input { position:absolute; opacity:0; }.payment-option .material-icons-outlined { color:#2563eb; }.payment-option b, .payment-option small { display:block; margin-top:9px; }.payment-option small { color:#64748b; font-weight:400; }.payment-option.active { border-color:#2563eb; background:#eff6ff; }.availability-message { min-height:18px; margin:10px 0 0; color:#15803d; font-weight:600; text-align:left; }
 @media (max-width: 1000px) { .stat-grid, .payment-options { grid-template-columns:repeat(2,1fr); }.dashboard-columns, .workspace-grid { grid-template-columns:1fr; }.payment-summary { grid-template-columns:repeat(2,1fr); } }
 @media (max-width: 600px) { .sketch-app .main-container { padding:16px; }.stat-grid, .payment-options, .form-grid, .system-summary, .payment-summary { grid-template-columns:1fr; }.booking-summary { align-items:flex-start; flex-direction:column; }.detail-list div { grid-template-columns:1fr; gap:3px; }.primary-action { width:100%; } }
-
