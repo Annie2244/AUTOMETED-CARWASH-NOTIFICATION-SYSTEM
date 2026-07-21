@@ -32,19 +32,34 @@ function setActiveLink(clickedLink, updateTitle = false) {
   );
   if (!links.length) return;
 
-  const currentFile = window.location.pathname.split('/').pop();
+  const hash = window.location.hash;
   let activeLink = clickedLink;
   if (!activeLink) {
-    activeLink = links.find((link) => link.getAttribute('href') === currentFile);
+    activeLink = hash ? links.find((link) => link.hash === hash) : null;
   }
   if (!activeLink) activeLink = links[0];
 
   links.forEach((link) => link.classList.remove('active'));
   activeLink.classList.add('active');
 
-  if (updateTitle) {
-    const mainTitle = document.querySelector('.main-title h2');
-    if (mainTitle) mainTitle.textContent = getLinkLabel(activeLink).toUpperCase();
+  const mainTitle = document.querySelector('.main-title h2');
+  if (mainTitle) {
+    if (!mainTitle.dataset.defaultTitle) mainTitle.dataset.defaultTitle = mainTitle.textContent;
+    if (updateTitle || hash) {
+      mainTitle.textContent = getLinkLabel(activeLink).toUpperCase();
+    } else {
+      mainTitle.textContent = mainTitle.dataset.defaultTitle;
+    }
+  }
+}
+
+function scrollToHash(hash) {
+  const id = (hash || '').replace('#', '');
+  if (id) {
+    const target = document.getElementById(id);
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  } else {
+    document.querySelector('.main-container')?.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }
 
@@ -120,17 +135,15 @@ function initialiseDashboard() {
         window.location.href = 'index.html';
         return;
       }
-      // Page links (e.g. customer-bookings.html) navigate normally; hash links scroll on the same page
       const href = link.getAttribute('href') || '';
       if (!href.startsWith('#')) {
         closeSidebar();
         return;
       }
       event.preventDefault();
-      const target = document.getElementById(href.slice(1));
-      if (target) target.scrollIntoView({ behavior: 'smooth' });
       window.location.hash = href;
       setActiveLink(link, true);
+      scrollToHash(href);
       closeSidebar();
       showToast(`${getLinkLabel(link)} selected.`);
     });
@@ -179,12 +192,10 @@ function initialiseDashboard() {
   });
   updateBookingSummary();
   setActiveLink();
-  const hashTarget = document.getElementById(window.location.hash.slice(1));
-  if (hashTarget) hashTarget.scrollIntoView({ behavior: 'smooth' });
+  scrollToHash(window.location.hash);
   window.addEventListener('hashchange', () => {
     setActiveLink();
-    const target = document.getElementById(window.location.hash.slice(1));
-    if (target) target.scrollIntoView({ behavior: 'smooth' });
+    scrollToHash(window.location.hash);
   });
   // Remove potential UI-locking by ensuring sidebar-backdrop never blocks clicks permanently
   // (Intentionally no global click handlers here; sidebar handled only by menu button + backdrop.)
@@ -196,11 +207,7 @@ function initialiseDashboard() {
     icon.setAttribute('aria-label', `${iconName} panel`);
     let action;
     if (iconName === 'account_circle') {
-      action = () => {
-        const current = JSON.parse(localStorage.getItem('carwash-current-user') || '{}');
-        const profilePage = current.role ? `${current.role}-profile.html` : 'login.html';
-        window.location.href = profilePage;
-      };
+      action = () => { window.location.hash = '#profile'; };
     } else {
       action = () => showToast(`${iconName} panel opened.`);
     }
@@ -208,6 +215,13 @@ function initialiseDashboard() {
     icon.addEventListener('keydown', (event) => {
       if (event.key === 'Enter' || event.key === ' ') action();
     });
+  });
+
+  document.querySelector('.back-button')?.addEventListener('click', (event) => {
+    event.preventDefault();
+    window.location.hash = '';
+    document.querySelector('.main-container')?.scrollTo({ top: 0, behavior: 'smooth' });
+    setActiveLink(null, false);
   });
 
   document.querySelectorAll('.demo-form:not(.profile-form)').forEach((form) => {

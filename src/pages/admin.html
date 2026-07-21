@@ -9,25 +9,163 @@
 </head>
 <body class="dashboard-page admin-dashboard sketch-app">
   <div class="grid-container">
-    <header class="header"><button type="button" class="menu-icon" aria-label="Open navigation menu" aria-expanded="false"><span class="material-icons-outlined">menu</span></button><div class="header-left"><h2>Carwash Admin</h2></div><div class="header-right"><span class="material-icons-outlined">notifications</span><span class="material-icons-outlined">account_circle</span></div></header>
+    <header class="header"><button type="button" class="menu-icon" aria-label="Open navigation menu" aria-expanded="false"><span class="material-icons-outlined">menu</span></button>
+<a href="#" class="back-button" aria-label="Back to top"><span class="material-icons-outlined">arrow_back</span></a><div class="header-left"><h2>Carwash Admin</h2></div><div class="header-right"><span class="material-icons-outlined">notifications</span><span class="material-icons-outlined">account_circle</span></div></header>
     <aside id="sidebar" class="sidebar" aria-label="Admin navigation"><div class="sidebar-title"><div class="sidebar-brand"><span class="material-icons-outlined">local_car_wash</span> Carwash</div><button type="button" class="close-sidebar" aria-label="Close navigation menu"><span class="material-icons-outlined">close</span></button></div><ul class="sidebar-list">
-<li class="sidebar-list-item"><a href="admin.html" class="active"><span class="material-icons-outlined">dashboard</span> Dashboard</a></li>
-<li class="sidebar-list-item"><a href="admin-bookings.html"><span class="material-icons-outlined">event</span> Bookings</a></li>
-<li class="sidebar-list-item"><a href="admin-services.html"><span class="material-icons-outlined">wash</span> Services</a></li>
-<li class="sidebar-list-item"><a href="admin-customers.html"><span class="material-icons-outlined">people</span> Customers</a></li>
-<li class="sidebar-list-item"><a href="admin-payments.html"><span class="material-icons-outlined">payments</span> Payments</a></li>
-<li class="sidebar-list-item"><a href="admin-reports.html"><span class="material-icons-outlined">assessment</span> Reports</a></li>
-<li class="sidebar-list-item"><a href="admin-settings.html"><span class="material-icons-outlined">settings</span> Settings</a></li>
-<li class="sidebar-list-item"><a href="admin-profile.html"><span class="material-icons-outlined">account_circle</span> Profile</a></li>
+<li class="sidebar-list-item"><a href="#overview" class="active"><span class="material-icons-outlined">dashboard</span> Dashboard</a></li>
+<li class="sidebar-list-item"><a href="#bookings"><span class="material-icons-outlined">event</span> Bookings</a></li>
+<li class="sidebar-list-item"><a href="#services"><span class="material-icons-outlined">wash</span> Services</a></li>
+<li class="sidebar-list-item"><a href="#customers"><span class="material-icons-outlined">people</span> Customers</a></li>
+<li class="sidebar-list-item"><a href="#payments"><span class="material-icons-outlined">payments</span> Payments</a></li>
+<li class="sidebar-list-item"><a href="#reports"><span class="material-icons-outlined">assessment</span> Reports</a></li>
+<li class="sidebar-list-item"><a href="#settings"><span class="material-icons-outlined">settings</span> Settings</a></li>
+<li class="sidebar-list-item"><a href="#profile"><span class="material-icons-outlined">account_circle</span> Profile</a></li>
 <li class="sidebar-list-item sidebar-logout"><a href="index.html" data-action="logout"><span class="material-icons-outlined">logout</span> Logout</a></li>
 </ul></aside>
     <main class="main-container">
       <div class="main-title"><p class="eyebrow">Operations overview</p><h2>Admin Dashboard</h2></div>
       <section class="stat-grid" id="overview"><article class="stat-card"><span class="material-icons-outlined">calendar_month</span><div><small>Total bookings</small><strong>128</strong></div></article><article class="stat-card"><span class="material-icons-outlined">task_alt</span><div><small>Completed services</small><strong>96</strong></div></article><article class="stat-card"><span class="material-icons-outlined">pending_actions</span><div><small>Pending services</small><strong>32</strong></div></article><article class="stat-card"><span class="material-icons-outlined">payments</span><div><small>Total revenue</small><strong>KSh 100,000</strong></div></article></section>
-      <section class="dashboard-columns"><article class="panel" id="services"><div class="panel-heading"><h3>Service Progress Overview</h3><button class="text-button" type="button">View report</button></div><div class="progress-row"><span>Completed</span><b>76%</b><div><i class="progress-green" style="width:76%"></i></div></div><div class="progress-row"><span>Pending</span><b>31%</b><div><i class="progress-orange" style="width:31%"></i></div></div><div class="progress-row"><span>In progress</span><b>18%</b><div><i class="progress-blue" style="width:18%"></i></div></div><div class="progress-row"><span>Cancelled</span><b>6%</b><div><i class="progress-red" style="width:6%"></i></div></div></article><article class="panel"><div class="panel-heading"><h3>Bookings Progress</h3><span class="muted">This week</span></div><div class="chart"><svg viewBox="0 0 460 190" role="img" aria-label="Weekly booking chart"><path class="chart-grid" d="M15 25H445M15 70H445M15 115H445M15 160H445"/><polyline class="chart-line" points="20,150 85,110 150,70 215,115 280,92 345,45 430,28"/><polyline class="chart-line-secondary" points="20,130 85,140 150,108 215,135 280,100 345,125 430,80"/></svg><div class="chart-labels"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div></div></article></section>
-      <section class="dashboard-columns" id="bookings"><article class="panel"><div class="panel-heading"><h3>Customer Feedback</h3><button class="text-button" type="button">View all feedback</button></div><div class="feedback"><b>John Mwangi <span>five star</span></b><p>“Excellent service. The car was spotless.”</p></div><div class="feedback"><b>Jane Wanjiku <span>4 stars</span></b><p>“Staff were very professional.”</p></div></article><article class="panel"><div class="panel-heading"><h3>Recent Bookings</h3><button class="text-button" type="button">View all bookings</button></div><div class="table-wrap"><table><thead><tr><th>Customer</th><th>Service</th><th>Date &amp; time</th><th>Status</th></tr></thead><tbody><tr><td>John Mwangi</td><td>Car wash</td><td>20 May, 9:00 AM</td><td><span class="badge confirmed">Confirmed</span></td></tr><tr><td>Mike Johnson</td><td>Detailing premium add-ons</td><td>26 May, 2:00 PM</td><td><span class="badge progress">In progress</span></td></tr><tr><td>Sarah Brown</td><td>interior services</td><td>30 May, 9:00 AM</td><td><span class="badge pending">Pending</span></td></tr></tbody></table></div></article></section>
+      <section class="dashboard-columns"><article class="panel" id="services-preview"><div class="panel-heading"><h3>Service Progress Overview</h3><button class="text-button" type="button">View report</button></div><div class="progress-row"><span>Completed</span><b>76%</b><div><i class="progress-green" style="width:76%"></i></div></div><div class="progress-row"><span>Pending</span><b>31%</b><div><i class="progress-orange" style="width:31%"></i></div></div><div class="progress-row"><span>In progress</span><b>18%</b><div><i class="progress-blue" style="width:18%"></i></div></div><div class="progress-row"><span>Cancelled</span><b>6%</b><div><i class="progress-red" style="width:6%"></i></div></div></article><article class="panel"><div class="panel-heading"><h3>Bookings Progress</h3><span class="muted">This week</span></div><div class="chart"><svg viewBox="0 0 460 190" role="img" aria-label="Weekly booking chart"><path class="chart-grid" d="M15 25H445M15 70H445M15 115H445M15 160H445"/><polyline class="chart-line" points="20,150 85,110 150,70 215,115 280,92 345,45 430,28"/><polyline class="chart-line-secondary" points="20,130 85,140 150,108 215,135 280,100 345,125 430,80"/></svg><div class="chart-labels"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div></div></article></section>
+      <section class="dashboard-columns" id="bookings-preview"><article class="panel"><div class="panel-heading"><h3>Customer Feedback</h3><button class="text-button" type="button">View all feedback</button></div><div class="feedback"><b>John Mwangi <span>five star</span></b><p>“Excellent service. The car was spotless.”</p></div><div class="feedback"><b>Jane Wanjiku <span>4 stars</span></b><p>“Staff were very professional.”</p></div></article><article class="panel"><div class="panel-heading"><h3>Recent Bookings</h3><button class="text-button" type="button">View all bookings</button></div><div class="table-wrap"><table><thead><tr><th>Customer</th><th>Service</th><th>Date &amp; time</th><th>Status</th></tr></thead><tbody><tr><td>John Mwangi</td><td>Car wash</td><td>20 May, 9:00 AM</td><td><span class="badge confirmed">Confirmed</span></td></tr><tr><td>Mike Johnson</td><td>Detailing premium add-ons</td><td>26 May, 2:00 PM</td><td><span class="badge progress">In progress</span></td></tr><tr><td>Sarah Brown</td><td>interior services</td><td>30 May, 9:00 AM</td><td><span class="badge pending">Pending</span></td></tr></tbody></table></div></article></section>
       <section class="system-summary"><div><span class="material-icons-outlined">group</span><p>Registered customers<strong>856</strong><small>↑ 10% from last week</small></p></div><div><span class="material-icons-outlined">manage_accounts</span><p>Active staff<strong>15</strong></p></div><div><span class="material-icons-outlined">check_circle</span><p>System status<strong>All systems operational</strong></p></div></section>
-    </main>
+    
+<section id="bookings">
+<section class="panel">
+    <div class="panel-heading"><h3>All bookings</h3><button type="button" class="text-button demo-button">Export</button></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>ID</th><th>Customer</th><th>Service</th><th>Date &amp; time</th><th>Status</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td>#1024</td><td>John Mwangi</td><td>Car wash</td><td>12 Jul, 9:00 AM</td><td><span class="badge confirmed">Confirmed</span></td><td><button type="button" class="demo-button secondary-action">Complete</button></td></tr>
+          <tr><td>#1025</td><td>Jane Wanjiku</td><td>Detailing</td><td>12 Jul, 11:00 AM</td><td><span class="badge progress">In progress</span></td><td><button type="button" class="demo-button secondary-action">Complete</button></td></tr>
+          <tr><td>#1026</td><td>Mike Johnson</td><td>Interior</td><td>13 Jul, 2:00 PM</td><td><span class="badge pending">Pending</span></td><td><button type="button" class="demo-button primary-action">Confirm</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+    </section>
+</section>
+<section id="services">
+<section class="panel">
+    <div class="panel-heading"><h3>Available services</h3></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Service</th><th>Price</th><th>Available</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td>Car wash</td><td>KSh 400</td><td><input type="checkbox" checked></td><td><button type="button" class="demo-button text-button">Edit</button></td></tr>
+          <tr><td>Home cleaning</td><td>KSh 500</td><td><input type="checkbox" checked></td><td><button type="button" class="demo-button text-button">Edit</button></td></tr>
+          <tr><td>Electrical service</td><td>KSh 800</td><td><input type="checkbox" checked></td><td><button type="button" class="demo-button text-button">Edit</button></td></tr>
+          <tr><td>Painting</td><td>KSh 1,000</td><td><input type="checkbox"></td><td><button type="button" class="demo-button text-button">Edit</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section class="panel">
+    <div class="panel-heading"><h3>Add new service</h3></div>
+    <form class="demo-form">
+      <div class="form-grid">
+        <label>Service name<input type="text" name="service" required></label>
+        <label>Price (KSh)<input type="number" name="price" required></label>
+      </div>
+      <button type="submit" class="primary-action">Add service</button>
+    </form>
+    </section>
+</section>
+<section id="customers">
+<section class="panel">
+    <div class="panel-heading"><h3>Registered customers</h3><button type="button" class="text-button demo-button">Add customer</button></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Bookings</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td>John Mwangi</td><td>john@example.com</td><td>customer</td><td>5</td><td><button type="button" class="demo-button text-button">View</button></td></tr>
+          <tr><td>Jane Wanjiku</td><td>jane@example.com</td><td>customer</td><td>3</td><td><button type="button" class="demo-button text-button">View</button></td></tr>
+          <tr><td>Peter Ochieng</td><td>peter@example.com</td><td>attendant</td><td>0</td><td><button type="button" class="demo-button text-button">View</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+    </section>
+</section>
+<section id="payments">
+<section class="stat-grid">
+    <article class="stat-card"><span class="material-icons-outlined">payments</span><div><small>Total revenue</small><strong>KSh 124,500</strong></div></article>
+    <article class="stat-card"><span class="material-icons-outlined">pending_actions</span><div><small>Pending</small><strong>KSh 12,000</strong></div></article>
+    <article class="stat-card"><span class="material-icons-outlined">check_circle</span><div><small>Completed</small><strong>KSh 112,500</strong></div></article>
+    <article class="stat-card"><span class="material-icons-outlined">credit_card</span><div><small>Transactions</small><strong>48</strong></div></article>
+  </section>
+  <section class="panel">
+    <div class="panel-heading"><h3>Payment transactions</h3></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Date</th><th>Customer</th><th>Service</th><th>Amount</th><th>Method</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>12 Jul 2026</td><td>John Mwangi</td><td>Car wash</td><td>KSh 400</td><td>M-Pesa</td><td><span class="badge confirmed">Paid</span></td></tr>
+          <tr><td>12 Jul 2026</td><td>Jane Wanjiku</td><td>Detailing</td><td>KSh 1,500</td><td>Card</td><td><span class="badge confirmed">Paid</span></td></tr>
+          <tr><td>13 Jul 2026</td><td>Mike Johnson</td><td>Interior</td><td>KSh 800</td><td>Cash</td><td><span class="badge pending">Pending</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    </section>
+</section>
+<section id="reports">
+<section class="stat-grid">
+    <article class="stat-card"><span class="material-icons-outlined">calendar_month</span><div><small>Total bookings</small><strong>128</strong></div></article>
+    <article class="stat-card"><span class="material-icons-outlined">task_alt</span><div><small>Completed</small><strong>96</strong></div></article>
+    <article class="stat-card"><span class="material-icons-outlined">payments</span><div><small>Revenue</small><strong>KSh 124,500</strong></div></article>
+    <article class="stat-card"><span class="material-icons-outlined">star</span><div><small>Avg rating</small><strong>4.6</strong></div></article>
+  </section>
+  <section class="panel">
+    <div class="panel-heading"><h3>Weekly bookings</h3><span class="muted">Last 7 days</span></div>
+    <div class="chart"><svg viewBox="0 0 460 190" role="img" aria-label="Weekly booking chart"><path class="chart-grid" d="M15 25H445M15 70H445M15 115H445M15 160H445"/><polyline class="chart-line" points="20,150 85,110 150,70 215,115 280,92 345,45 430,28"/><polyline class="chart-line-secondary" points="20,130 85,140 150,108 215,135 280,100 345,125 430,80"/></svg><div class="chart-labels"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div></div>
+  </section>
+  <section class="panel">
+    <div class="panel-heading"><h3>Service performance</h3></div>
+    <div class="progress-row"><span>Car wash</span><b>45%</b><div><i class="progress-green" style="width:45%"></i></div></div>
+    <div class="progress-row"><span>Detailing</span><b>30%</b><div><i class="progress-orange" style="width:30%"></i></div></div>
+    <div class="progress-row"><span>Interior</span><b>15%</b><div><i class="progress-blue" style="width:15%"></i></div></div>
+    <div class="progress-row"><span>Painting</span><b>10%</b><div><i class="progress-red" style="width:10%"></i></div></div>
+    </section>
+</section>
+<section id="settings">
+<section class="panel">
+    <div class="panel-heading"><h3>Business settings</h3></div>
+    <form class="demo-form">
+      <div class="form-grid">
+        <label>Business name<input type="text" name="business" value="Carwash Pro" required></label>
+        <label>Contact email<input type="email" name="email" value="info@carwash.com" required></label>
+        <label>Phone<input type="tel" name="phone" value="+254 712 345 678" required></label>
+      </div>
+      <label><input type="checkbox" name="notifications" checked> Send email notifications</label>
+      <button type="submit" class="primary-action">Save settings</button>
+    </form>
+    </section>
+</section>
+<section id="profile">
+<section class="panel">
+    <div class="panel-heading"><h3>My Profile</h3></div>
+    <form class="profile-form demo-form">
+      <div class="form-grid">
+        <label>
+          Full name
+          <input type="text" name="name" placeholder="Your name" required>
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" placeholder="you@example.com" required>
+        </label>
+        <label>
+          Role
+          <input type="text" name="role" value="admin" disabled>
+        </label>
+      </div>
+      <button type="submit" class="primary-action">Update profile</button>
+    </form>
+  </section>
+  <section class="panel">
+    <div class="panel-heading"><h3>Admin permissions</h3></div>
+    <p>As an admin you can manage bookings, services, customers, payments and system settings.</p>
+    </section>
+</section>
+</main>
   </div>
   <script src="../js/script.js"></script>
 </body>
